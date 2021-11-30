@@ -42,7 +42,7 @@ def forward_to_user(update, context):
             message_id=update.message.message_id,
             chat_id=user_id,
             from_chat_id=update.message.chat_id
-            text="Все технические моменты по платформе, снятию денег, проводим через этого бота. Вам ответят наши технические специалисты. Пишем запрос в таком формате: Ссылка на ребёнка, Предмет, Проблема."
+            
         )
     else:
         context.bot.send_message(
