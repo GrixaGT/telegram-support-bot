@@ -25,6 +25,7 @@ def forward_to_chat(update, context):
             chat_id=TELEGRAM_SUPPORT_CHAT_ID,
             reply_to_message_id=forwarded.message_id,
             text=f'{update.message.from_user.id}\n{REPLY_TO_THIS_MESSAGE}'
+            text=f"@samat @mxmuich @grishaluktex"
         )
 
 
@@ -43,6 +44,7 @@ def forward_to_user(update, context):
             message_id=update.message.message_id,
             chat_id=user_id,
             from_chat_id=update.message.chat_id
+            text= f"Все технические моменты по платформе, снятию денег, проводим через этого бота. Вам ответят наши технические специалисты. Пишем запрос в таком формате: Ссылка на ребёнка, Предмет, Проблема."
             
         )
     else:
