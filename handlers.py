@@ -19,7 +19,7 @@ def start(update, context):
 
 def forward_to_chat(update, context):
     
-    forwarded = update.message.forward(chat_id=TELEGRAM_SUPPORT_CHAT_ID,"@samat @mxmuich @grishaluktex")
+    forwarded = update.message.forward(chat_id=TELEGRAM_SUPPORT_CHAT_ID)
     if not forwarded.forward_from:
         context.bot.send_message(
             text=f'{"@samat @mxmuich @grishaluktex"}',
