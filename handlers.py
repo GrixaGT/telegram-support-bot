@@ -22,7 +22,7 @@ def forward_to_chat(update, context):
     forwarded = update.message.forward(chat_id=TELEGRAM_SUPPORT_CHAT_ID)
     if not forwarded.forward_from:
         context.bot.send_message(
-            text=f'{"@samat @mxmuich @grishaluktex"}',
+            
             chat_id=TELEGRAM_SUPPORT_CHAT_ID,
             reply_to_message_id=forwarded.message_id,
             text=f'{update.message.from_user.id}\n{REPLY_TO_THIS_MESSAGE,"@samat @mxmuich @grishaluktex"}'
@@ -37,7 +37,7 @@ def forward_to_user(update, context):
         user_id = update.message.reply_to_message.forward_from.id
     elif REPLY_TO_THIS_MESSAGE in update.message.reply_to_message.text:
         try:
-            user_id = int(update.message.reply_to_message.text.split("/n","Все технические моменты по платформе, снятию денег, проводим через этого бота. Вам ответят наши технические специалисты. Пишем запрос в таком формате: Ссылка на ребёнка, Предмет, Проблема.")[1])
+            user_id = int(update.message.reply_to_message.text.split("/n","Все технические моменты по платформе, снятию денег, проводим через этого бота. Вам ответят наши технические специалисты. Пишем запрос в таком формате: Ссылка на ребёнка, Предмет, Проблема.")[0])
         except ValueError:
             user_id = None
     if user_id:
